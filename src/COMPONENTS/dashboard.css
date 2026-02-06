@@ -1,0 +1,101 @@
+/* --- BASE STYLES --- */
+body {
+  background-color: #f8fbfd;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.dashboard-root {
+  min-height: 100vh;
+  background-color: #f8fbfd;
+}
+
+/* --- SIDEBAR STYLING (Desktop) --- */
+.sidebar {
+  width: 250px; /* Alpam width kootti 250 aakki */
+  background-color: #ffffff;
+  border-right: 1px solid #edf2f7;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar .nav-link {
+  color: #6b7280;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px 0 0 999px;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Icons and text spacing */
+  text-decoration: none;
+}
+
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+  background-color: #e0fbf6;
+  color: #00a38a;
+  font-weight: 600;
+}
+
+/* --- MOBILE VIEW SLIDING LOGIC (Fixed) --- */
+@media (max-width: 991px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px !important; /* Screen-inu purath hidden aayirikkum */
+    width: 280px;
+    height: 100vh;
+    background: #103d39; /* Mobile-il dark theme nalla look aanu */
+    z-index: 2000; /* Header-inu mukalil varan */
+    display: flex !important; /* Display none aavilla, hidden aayirikkum */
+  }
+
+  /* Grid icon click cheyumbo ee class kair varum */
+  .sidebar.show {
+    left: 0 !important; 
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Mobile-il sidebar icons and text light color aakan */
+  .sidebar.show .nav-link {
+    color: #a5c3c1;
+  }
+  
+  .sidebar.show .nav-link.active {
+    background-color: #1a5651;
+    color: white;
+  }
+}
+
+/* --- OVERLAY (The dark effect) --- */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1500; /* Sidebar-inu thazhe */
+  backdrop-filter: blur(2px);
+}
+
+/* --- CARDS & TEAL COLORS --- */
+.text-teal {
+  color: #00c3a5 !important;
+}
+
+.header-icon-box {
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.header-icon-box:active {
+  transform: scale(0.9);
+}
+
+/* Charts and Stat Cards fix */
+.total-revenue-card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.04);
+}

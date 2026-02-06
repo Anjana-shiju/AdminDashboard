@@ -1,0 +1,123 @@
+/* --- DESKTOP BASE STYLE --- */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background: #ffffff; /* Desktop-il pure white background */
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+  border-right: 1px solid #e8f3f1;
+}
+
+.logo {
+  width: 130px;
+  margin-bottom: 30px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-menu li {
+  padding: 12px 15px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #555; 
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+/* Active state with your teal color */
+.sidebar-menu li.active {
+  background: #0bb5a8; 
+  color: white;
+}
+
+.sidebar-menu li:hover:not(.active) {
+  background: #f0fdfa; 
+  color: #0bb5a8;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* --- MOBILE VIEW LOGIC (White Theme) --- */
+@media (max-width: 991px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px !important; /* Initially hidden */
+    width: 280px;
+    height: 100vh; /* Sidebar height fix */
+    background-color: #ffffff !important; /* Full white background */
+    z-index: 2000;
+    display: flex !important;
+    padding-top: 15px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother slide */
+  }
+
+  .sidebar.show {
+    left: 0 !important; 
+    box-shadow: 10px 0 30px rgba(0,0,0,0.1) !important; 
+  }
+
+  /* --- CLOSE BUTTON FIX (X Icon) --- */
+  /* Sidebar-inte ullile "X" button ippo dark grey/teal aakum, white aakilla */
+  .sidebar-header button {
+    color: #103d39 !important; 
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sidebar-menu li { 
+    color: #555 !important; 
+  }
+
+  .sidebar-menu li.active { 
+    background: #0bb5a8 !important; 
+    color: white !important; 
+  }
+
+  /* OVERLAY STYLING */
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4); 
+    backdrop-filter: blur(2px);
+    z-index: 1500;
+    cursor: pointer;
+  }
+}
+
+/* DESKTOP STICKY */
+@media (min-width: 992px) {
+  .sidebar {
+    position: sticky;
+    top: 0;
+  }
+}
