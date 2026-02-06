@@ -94,6 +94,7 @@ export default function DashboardPage() {
         <DashboardStats />
 
         <div className="row mt-3 g-3">
+          {/* REVENUE INSIGHTS */}
           <div className="col-xl-5 col-lg-12">
             <div className="card border-0 shadow-sm p-3 rounded-4 h-100 bg-white">
               <h6 className="fw-bold mb-3 small">Revenue Insights</h6>
@@ -103,6 +104,7 @@ export default function DashboardPage() {
             </div>
           </div>
 
+          {/* LISTING STATS */}
           <div className="col-xl-4 col-md-6">
             <div className="card border-0 shadow-sm p-4 rounded-4 h-100 bg-white">
               <div className="d-flex gap-2 mb-4 overflow-auto pb-1">
@@ -120,42 +122,46 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          {/* NEW REGISTRATIONS WITH HEART ICON */}
+          {/* NEW REGISTRATIONS (Updated with People Icon & This Month Label) */}
           <div className="col-xl-3 col-md-6">
             <div className="card border-0 shadow-sm p-3 rounded-4 h-100 bg-white">
-              <div className="d-flex align-items-center gap-3 mb-2">
-                <div className="p-2 rounded-3 d-flex align-items-center justify-content-center" 
-                     style={{backgroundColor: '#e6f7f5', width: '45px', height: '45px'}}>
-                  {/* Bed icon maatti Heart icon aakki */}
-                  <i className="bi bi-heart-fill text-teal fs-4"></i> 
+              <div className="d-flex align-items-center gap-3 mb-3">
+                <div className="d-flex align-items-center justify-content-center" 
+                     style={{ color: '#00a896' }}>
+                  <i className="bi bi-people-fill" style={{ fontSize: '28px' }}></i>
                 </div>
                 <div>
-                  <h6 className="mb-0 fw-bold text-dark" style={{fontSize: '14px'}}>New Registrations</h6>
+                  <h6 className="mb-0 fw-bold text-dark" style={{fontSize: '15px'}}>New Registrations</h6>
                   <div className="d-flex align-items-center gap-2">
                     <h4 className="fw-bold mb-0">10</h4>
-                    <span className="text-success fw-bold" style={{fontSize: '12px'}}>↑ +1.1%</span>
+                    <div className="d-flex align-items-center gap-1">
+                        <span className="text-success fw-bold d-flex align-items-center" style={{fontSize: '12px'}}>
+                            <i className="bi bi-arrow-up-short fs-5"></i>+1.1%
+                        </span>
+                        <span className="text-muted fw-normal" style={{fontSize: '12px'}}>This Month</span>
+                    </div>
                   </div>
                 </div>
               </div>
               
-              <div className="p-3 rounded-4 mt-3" style={{backgroundColor: '#e6f7f5'}}>
-                <div className="d-flex justify-content-between align-items-center fw-bold mb-3" style={{fontSize: '12px'}}>
-                  <span className="text-dark">Total Active Users</span>
+              <div className="p-3 rounded-4" style={{backgroundColor: '#e6f7f5'}}>
+                <div className="d-flex justify-content-between align-items-center fw-bold mb-3">
+                  <span className="text-dark" style={{fontSize: '13px'}}>Total Active Users</span>
                   <span className="text-dark fs-5">50</span>
                 </div>
                 
                 <div className="row text-center g-0 border-top pt-3 border-secondary border-opacity-10">
                   <div className="col border-end">
-                    <div className="text-muted mb-1" style={{fontSize: '10px'}}>Buyers</div>
-                    <div className="fw-bold text-dark small">05</div>
+                    <div className="text-muted mb-1" style={{fontSize: '11px'}}>Buyers</div>
+                    <div className="fw-bold text-dark">05</div>
                   </div>
                   <div className="col border-end">
-                    <div className="text-muted mb-1" style={{fontSize: '10px'}}>Rentals</div>
-                    <div className="fw-bold text-dark small">15</div>
+                    <div className="text-muted mb-1" style={{fontSize: '11px'}}>Rentals</div>
+                    <div className="fw-bold text-dark">15</div>
                   </div>
                   <div className="col">
-                    <div className="text-muted mb-1" style={{fontSize: '10px'}}>PG</div>
-                    <div className="fw-bold text-dark small">30</div>
+                    <div className="text-muted mb-1" style={{fontSize: '11px'}}>PG</div>
+                    <div className="fw-bold text-dark">30</div>
                   </div>
                 </div>
               </div>
@@ -168,6 +174,7 @@ export default function DashboardPage() {
           </div>
         </div>
 
+        {/* BOTTOM ROW */}
         <div className="row mt-3 g-3 mb-4">
           <div className="col-lg-4 col-md-6"><ReportGenerator /></div>
           
