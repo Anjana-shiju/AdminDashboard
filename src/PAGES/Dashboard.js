@@ -122,7 +122,7 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          {/* NEW REGISTRATIONS (Updated with People Icon & This Month Label) */}
+          {/* NEW REGISTRATIONS */}
           <div className="col-xl-3 col-md-6">
             <div className="card border-0 shadow-sm p-3 rounded-4 h-100 bg-white">
               <div className="d-flex align-items-center gap-3 mb-3">
@@ -179,12 +179,13 @@ export default function DashboardPage() {
           <div className="col-lg-4 col-md-6"><ReportGenerator /></div>
           
           <div className="col-lg-4 col-md-6">
-            <div className="card border-0 shadow-sm p-3 rounded-4 bg-white h-100">
+            <div className="card border-0 shadow-sm p-4 rounded-4 bg-white h-100">
               <h6 className="fw-bold mb-3 small">Remainder</h6>
               <div className="d-flex flex-column gap-2">
                 <RemainderItem amount="₹15,000" text="overdue from Alen for '3BHK Flat'" action="Send Reminder" />
                 <RemainderItem amount="expires in 3 days" text="'2BHK Villa in Goa'" action="View" />
                 <RemainderItem amount="₹15,000" text="overdue from Alen for '3BHK Flat'" action="Send Reminder" />
+                <RemainderItem amount="expires in 3 days" text="'2BHK Villa in Goa'" action="View" />
               </div>
             </div>
           </div>
@@ -202,12 +203,22 @@ const StatRow = ({ label, value }) => (
   </div>
 );
 
+// Updated RemainderItem for Uniform Button Sizes
 const RemainderItem = ({ amount, text, action }) => (
-  <div className="p-2 px-3 rounded-4 d-flex justify-content-between align-items-center shadow-sm" style={{ backgroundColor: '#e6f7f5', minHeight: '62px' }}>
-    <div style={{ maxWidth: '68%' }}>
+  <div className="p-2 px-3 rounded-4 d-flex justify-content-between align-items-center shadow-sm" 
+       style={{ backgroundColor: '#e6f7f5', minHeight: '62px' }}>
+    <div style={{ maxWidth: '58%' }}>
       <div className="fw-bold text-dark" style={{ fontSize: '11px' }}>{amount}</div>
       <div className="text-muted" style={{ fontSize: '9px' }}>{text}</div>
     </div>
-    <button className="btn bg-white shadow-sm border-0 py-1 px-3 rounded-pill fw-bold" style={{ fontSize: '9px', color: '#00a896' }}>{action}</button>
+    <button className="btn bg-white shadow-sm border-0 py-1 px-2 rounded-pill fw-bold" 
+            style={{ 
+              fontSize: '9px', 
+              color: '#00a896',
+              minWidth: '85px', // Ee value aanu buttons orey size aakkunnath
+              textAlign: 'center'
+            }}>
+      {action}
+    </button>
   </div>
 );
