@@ -54,14 +54,33 @@ const ReportGenerator = () => {
       </div>
 
       <div className="mt-4 flex-grow-1 d-flex flex-column justify-content-end">
-        <button className="btn w-100 mb-2 py-2 fw-bold shadow-none" 
-                style={{ color: '#00a896', border: '1.5px solid #00a896', borderRadius: '25px', fontSize: '12px' }}>
+       {/* BUTTONS SECTION */}
+      <div className="mt-auto d-flex flex-column gap-2">
+        <button 
+          className="btn w-100 py-2 fw-bold" 
+          style={{ 
+            color: '#11A6A1', 
+            backgroundColor: 'transparent',
+            border: '1.5px solid #11A6A1', 
+            borderRadius: '12px', 
+            fontSize: '13px',
+            transition: '0.3s'
+          }}>
           Export Report
         </button>
-        <button className="btn w-100 text-white py-2 fw-bold shadow-none" 
-                style={{ backgroundColor: '#00a896', borderRadius: '25px', fontSize: '12px', border: 'none' }}>
+        
+        <button 
+          className="btn w-100 text-white py-2 fw-bold" 
+          style={{ 
+            backgroundColor: '#11A6A1', 
+            border: '1.5px solid #11A6A1',
+            borderRadius: '12px', 
+            fontSize: '13px',
+            transition: '0.3s'
+          }}>
           Download Pdf
         </button>
+      </div>
       </div>
     </div>
   );
